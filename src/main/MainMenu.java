@@ -7,8 +7,9 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
+import student.Main;
 
-public class Login extends Application {
+public class MainMenu extends Application {
     private Scene mainScene;
     private BorderPane mainBorderPane;
     private HBox hBox;
@@ -24,19 +25,27 @@ public class Login extends Application {
 
     @Override
     public void start(Stage window) {
+        window.setScene(createScene(window));
+
+        window.setTitle("I.M. High");
+
+        window.show();
+    }
+
+    public Scene createScene(Stage window) {
         mainBorderPane = new BorderPane();
 
         mainBorderPane.setTop(createTitle());
         mainBorderPane.setCenter(createVBox(window));
 
-        mainScene = new Scene(mainBorderPane, 1000, 750);
+        mainScene = new Scene(mainBorderPane);
+
+        window.setWidth(1000);
+        window.setHeight(750);
+
         mainScene.getStylesheets().add("css/main/MainLogin.css");
 
-        window.setScene(mainScene);
-
-        window.setTitle("I.M. High");
-
-        window.show();
+        return mainScene;
     }
 
     private HBox createTitle() {
@@ -61,9 +70,9 @@ public class Login extends Application {
         studentButton = new Button("Student");
 
         studentButton.setOnAction(e -> {
-            student.Login login = new student.Login();
+            Main main = new student.Main();
 
-            window.setScene(login.createScene(window));
+            window.setScene(main.createScene(window));
         });
 
         hBox.getChildren().addAll(administratorButton, teacherButton, studentButton);
@@ -71,3 +80,5 @@ public class Login extends Application {
         return hBox;
     }
 }
+
+
