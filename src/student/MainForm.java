@@ -6,9 +6,9 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
-import main.MainMenu;
+import main.MainMenuForm;
 
-public class Main {
+public class MainForm {
     private Scene mainScene;
     private BorderPane mainBorderPane;
     private HBox mainHBox;
@@ -25,7 +25,7 @@ public class Main {
         mainBorderPane.setCenter(createMainHBox(window));
 
         mainScene = new Scene(mainBorderPane, window.getWidth(), window.getHeight());
-        mainScene.getStylesheets().add("css/student/StudentLogin.css");
+        mainScene.getStylesheets().add("css/student/main/StudentMain.css");
 
         return mainScene;
     }
@@ -34,7 +34,7 @@ public class Main {
         titleBox = new HBox();
         titleBox.setId("title");
 
-        titleLabel = new Label("STUDENT");
+        titleLabel = new Label("I.M. HIGH STUDENT");
 
         titleBox.getChildren().add(titleLabel);
 
@@ -49,12 +49,18 @@ public class Main {
 
         registerButton = new Button("Register");
 
+        registerButton.setOnAction(e -> {
+            RegisterForm register = new RegisterForm();
+
+            window.setScene(register.createScene(window));
+        });
+
         backButton = new Button("Menu");
 
         mainHBox.getChildren().addAll(loginButton, registerButton, backButton);
 
         backButton.setOnAction( e -> {
-           MainMenu mainMenu = new MainMenu();
+           MainMenuForm mainMenu = new MainMenuForm();
 
            window.setScene(mainMenu.createScene(window));
         });

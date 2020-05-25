@@ -1,0 +1,38 @@
+.root {
+    -fx-font-size: 16px;
+    -fx-font-family: "Century Gothic";
+
+    -fx-background-image: url("mainBg.jpg");
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center center;
+    -fx-background-size: 100% 100%;
+
+    -fx-pref-height: 100%;
+    -fx-pref-width: 100%;
+}
+
+#main {
+    -fx-spacing: 15px;
+
+    -fx-padding: 40px;
+}
+
+#main VBox .label {
+    -fx-font-size: 25px;
+}
+
+#main VBox {
+    -fx-spacing: 15px;
+}
+
+#main HBox {
+    -fx-spacing: 15px;
+}
+
+#main HBox .text-field {
+
+}
+
+#title {
+    -fx-font-size: 45px;
+}

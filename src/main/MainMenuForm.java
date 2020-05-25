@@ -7,9 +7,9 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
-import student.Main;
+import student.MainForm;
 
-public class MainMenu extends Application {
+public class MainMenuForm extends Application {
     private Scene mainScene;
     private BorderPane mainBorderPane;
     private HBox hBox;
@@ -27,7 +27,7 @@ public class MainMenu extends Application {
     public void start(Stage window) {
         window.setScene(createScene(window));
 
-        window.setTitle("I.M. High");
+        window.setTitle("I.M. High University");
 
         window.show();
     }
@@ -40,8 +40,11 @@ public class MainMenu extends Application {
 
         mainScene = new Scene(mainBorderPane);
 
-        window.setWidth(1000);
-        window.setHeight(750);
+        window.setWidth(1250);
+        window.setHeight(900);
+
+        window.setMinWidth(500);
+        window.setMinHeight(375);
 
         mainScene.getStylesheets().add("css/main/MainLogin.css");
 
@@ -70,7 +73,7 @@ public class MainMenu extends Application {
         studentButton = new Button("Student");
 
         studentButton.setOnAction(e -> {
-            Main main = new student.Main();
+            MainForm main = new MainForm();
 
             window.setScene(main.createScene(window));
         });
