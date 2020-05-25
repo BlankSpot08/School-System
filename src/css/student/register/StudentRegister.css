@@ -21,6 +21,10 @@
     -fx-font-size: 25px;
 }
 
+#main VBox HBox .label {
+    -fx-font-size: 18px;
+}
+
 #main VBox {
     -fx-spacing: 15px;
 }
@@ -30,13 +34,41 @@
 }
 
 #main HBox .text-field {
+    -fx-pref-width: 300px;
+}
 
+#main HBox .date-picker {
+    -fx-pref-width: 300px;
 }
 
 #title {
     -fx-font-size: 45px;
 }
 
-.button:hover {
-    -fx-cursor: hand;
+#bottom {
+    -fx-padding: 0px 40px 40px 40px;
 }
+
+#bottom HBox {
+    -fx-spacing: 15px;
+    -fx-padding: 10px 0px 10px 0px;
+}
+
+#bottom HBox .button {
+    -fx-pref-width: 143.5px;
+    -fx-pref-height: 25px;
+
+    -fx-border-radius: 12.5px;
+    -fx-background-radius: 12.5px;
+
+    -fx-background-color: #FFFFFF;
+}
+
+#bottom HBox .button:hover {
+    -fx-text-fill: #FFFFFF;
+    -fx-background-color: none;
+    -fx-cursor: hand;
+    -fx-border-color: #FFFFFF;
+    -fx-border-width: 2.5px;
+}
+

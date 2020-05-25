@@ -7,6 +7,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 import main.MainMenuForm;
+import sun.rmi.runtime.Log;
 
 public class MainForm {
     private Scene mainScene;
@@ -46,6 +47,12 @@ public class MainForm {
         mainHBox.setId("main");
 
         loginButton = new Button("Login");
+
+        loginButton.setOnAction(e -> {
+            LoginForm login = new LoginForm();
+
+            window.setScene(login.createScene(window));
+        });
 
         registerButton = new Button("Register");
 
