@@ -36,3 +36,7 @@
 #title {
     -fx-font-size: 45px;
 }
+
+.button:hover {
+    -fx-cursor: hand;
+}

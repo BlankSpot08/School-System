@@ -6,6 +6,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import main.MainMenuForm;
 import org.omg.PortableServer.THREAD_POLICY_ID;
 
 import javax.xml.soap.Text;
@@ -73,15 +74,37 @@ public class RegisterForm {
     private HBox eightLayer;
     private TextField emergencyCellPhoneTextField;
 
+    private HBox lastLayer;
+    private Button cancelButton;
+    private Button registerButton;
+
     public Scene createScene(Stage window) {
         mainBorderPane = new BorderPane();
 
-        mainBorderPane.setCenter(createMainPane());
+        mainBorderPane.setCenter(createMainPane(window));
 
         mainScene = new Scene(mainBorderPane, window.getWidth(), window.getHeight());
         mainScene.getStylesheets().add("css/student/register/StudentRegister.css");
 
         return mainScene;
+    }
+
+    private HBox createLastLayer(Stage window) {
+        lastLayer = new HBox();
+
+        cancelButton = new Button("Cancel");
+
+        cancelButton.setOnAction(e -> {
+            MainMenuForm main = new MainMenuForm();
+
+            window.setScene(main.createScene(window));
+        });
+
+        registerButton = new Button("Register");
+
+        lastLayer.getChildren().addAll(cancelButton, registerButton);
+
+        return lastLayer;
     }
 
     private HBox createEightLayer() {
@@ -293,7 +316,7 @@ public class RegisterForm {
         return titleHBox;
     }
 
-    private VBox createMainPane() {
+    private VBox createMainPane(Stage window) {
         mainPane = new VBox();
         mainPane.setId("main");
 
@@ -301,7 +324,8 @@ public class RegisterForm {
                 createTitle(),
                 createFirstDivision(),
                 createSecondDivision(),
-                createThirdDivision());
+                createThirdDivision(),
+                createLastLayer(window));
 
         return mainPane;
     }
