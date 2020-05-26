@@ -64,7 +64,7 @@ public class MainMenuForm extends Application {
 
     private HBox createVBox(Stage window) {
         hBox = new HBox();
-        hBox.setId("center");
+        hBox.setId("main");
 
         administratorButton = new Button("Administrator");
 

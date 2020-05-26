@@ -56,10 +56,10 @@
 
 #bottom HBox .button {
     -fx-pref-width: 143.5px;
-    -fx-pref-height: 25px;
+    -fx-pref-height: 35px;
 
-    -fx-border-radius: 12.5px;
-    -fx-background-radius: 12.5px;
+    -fx-border-radius: 25px;
+    -fx-background-radius: 25px;
 
     -fx-background-color: #FFFFFF;
 }

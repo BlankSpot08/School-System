@@ -92,10 +92,8 @@ public class RegisterForm {
 
     private HBox createBottomButtons(Stage window) {
         lastLayer = new HBox();
-//        lastLayer.prefWidthProperty().bind(Bindings.divide(bottomBorderPane.widthProperty(), 1));
 
         cancelButton = new Button("Cancel");
-//        cancelButton.prefWidthProperty().bind(Bindings.divide(lastLayer.widthProperty(), 9));
 
         cancelButton.setOnAction(e -> {
             MainForm main = new MainForm();
@@ -104,7 +102,6 @@ public class RegisterForm {
         });
 
         registerButton = new Button("Register");
-//        registerButton.prefWidthProperty().bind(Bindings.divide(lastLayer.widthProperty(), 9));
 
         lastLayer.getChildren().addAll(cancelButton, registerButton);
 
@@ -125,7 +122,6 @@ public class RegisterForm {
 
         emergencyCellPhoneTextField = new TextField();
         emergencyCellPhoneTextField.setPromptText("Cellphone Number");
-//        emergencyCellPhoneTextField.prefWidthProperty().bind(Bindings.divide(eightLayer.widthProperty(), 4));
 
         eightLayer.getChildren().add(emergencyCellPhoneTextField);
 
@@ -137,15 +133,12 @@ public class RegisterForm {
 
         emergencyFirstNameTextField = new TextField();
         emergencyFirstNameTextField.setPromptText("First Name");
-//        emergencyFirstNameTextField.prefWidthProperty().bind(Bindings.divide(seventhLayer.widthProperty(), 4));
 
         emergencyMiddleNameTextField = new TextField();
         emergencyMiddleNameTextField.setPromptText("Middle Name");
-//        emergencyMiddleNameTextField.prefWidthProperty().bind(Bindings.divide(seventhLayer.widthProperty(), 4));
 
         emergencyLastNameTextField = new TextField();
         emergencyLastNameTextField.setPromptText("Last Name");
-//        emergencyLastNameTextField.prefWidthProperty().bind(Bindings.divide(seventhLayer.widthProperty(), 4));
 
         seventhLayer.getChildren().addAll(emergencyFirstNameTextField,
                 emergencyMiddleNameTextField,
@@ -166,7 +159,6 @@ public class RegisterForm {
 
     private VBox createMotherVBox() {
         motherVBox = new VBox();
-//        motherVBox.prefWidthProperty().bind(Bindings.divide(sixthLayer.widthProperty(), 4));
 
         motherLabel = new Label("Mother");
 
@@ -189,7 +181,6 @@ public class RegisterForm {
 
     private VBox createFatherVBox() {
         fatherVBox = new VBox();
-//        fatherVBox.prefWidthProperty().bind(Bindings.divide(sixthLayer.widthProperty(), 4));
 
         fatherLabel = new Label("Father");
 
@@ -234,11 +225,9 @@ public class RegisterForm {
 
         emailAddressTextField = new TextField();
         emailAddressTextField.setPromptText("Email Address");
-//        emailAddressTextField.prefWidthProperty().bind(Bindings.divide(fifthLayer.widthProperty(), 1.95));
 
         mobilePhoneTextField = new TextField();
         mobilePhoneTextField.setPromptText("Phone Number");
-//        mobilePhoneTextField.prefWidthProperty().bind(Bindings.divide(fifthLayer.widthProperty(), 4.0));
 
         fifthLayer.getChildren().addAll(emailAddressTextField, mobilePhoneTextField);
 
@@ -250,11 +239,9 @@ public class RegisterForm {
 
         addressTextField = new TextField();
         addressTextField.setPromptText("Address");
-//        addressTextField.prefWidthProperty().bind(Bindings.divide(fourthLayer.widthProperty(), 1.95));
 
         postalCodeTextField = new TextField();
         postalCodeTextField.setPromptText("Postal Code");
-//        postalCodeTextField.prefWidthProperty().bind(Bindings.divide(fourthLayer.widthProperty(), 4.0));
 
         fourthLayer.getChildren().addAll(addressTextField, postalCodeTextField);
 
@@ -284,15 +271,12 @@ public class RegisterForm {
         secondLayer = new HBox();
 
         dateOfBirthDatePicker = new DatePicker();
-//        dateOfBirthDatePicker.prefWidthProperty().bind(Bindings.divide(secondLayer.widthProperty(), 4.0));
 
         placeOfBirthTextField = new TextField();
         placeOfBirthTextField.setPromptText("Place of Birth");
-//        placeOfBirthTextField.prefWidthProperty().bind(Bindings.divide(secondLayer.widthProperty(), 4.0));
 
         ageTextField = new TextField();
         ageTextField.setPromptText("Age");
-//        ageTextField.prefWidthProperty().bind(Bindings.divide(secondLayer.widthProperty(), 4.0));
 
         secondLayer.getChildren().addAll(dateOfBirthDatePicker, placeOfBirthTextField, ageTextField);
 
@@ -301,19 +285,15 @@ public class RegisterForm {
 
     private HBox createFirstLayer() {
         firstLayer = new HBox();
-//        firstLayer.setMinSize(firstDivision.getPrefWidth(), firstDivision.getPrefHeight());
 
         firstNameTextField = new TextField();
         firstNameTextField.setPromptText("First Name");
-//        firstNameTextField.prefWidthProperty().bind(Bindings.divide(firstLayer.widthProperty(), 4.0));
 
         middleNameTextField = new TextField();
         middleNameTextField.setPromptText("Middle Name");
-//        middleNameTextField.prefWidthProperty().bind(Bindings.divide(firstLayer.widthProperty(), 4.0));
 
         lastNameTextField = new TextField();
         lastNameTextField.setPromptText("Last Name");
-//        lastNameTextField.prefWidthProperty().bind(Bindings.divide(firstLayer.widthProperty(), 4.0));
 
         firstLayer.getChildren().addAll(firstNameTextField, middleNameTextField, lastNameTextField);
 

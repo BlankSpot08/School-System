@@ -11,12 +11,12 @@
     -fx-pref-width: 100%;
 }
 
-#center {
+#main {
     -fx-alignment: center;
     -fx-spacing: 15px;
 }
 
-#center .button {
+#main .button {
     -fx-pref-width: 250;
     -fx-pref-height: 50;
 
@@ -26,7 +26,7 @@
     -fx-background-color: #FFFFFF;
 }
 
-#center .button:hover {
+#main .button:hover {
     -fx-text-fill: #FFFFFF;
     -fx-background-color: none;
     -fx-cursor: hand;
