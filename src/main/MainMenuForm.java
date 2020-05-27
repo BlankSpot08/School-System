@@ -1,5 +1,6 @@
 package main;
 
+import administrator.LoginForm;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -8,7 +9,6 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 import student.MainForm;
-import teacher.LoginForm;
 
 public class MainMenuForm extends Application {
     private Scene mainScene;
@@ -69,10 +69,16 @@ public class MainMenuForm extends Application {
 
         administratorButton = new Button("Administrator");
 
+        administratorButton.setOnAction(e -> {
+            LoginForm login = new LoginForm();
+
+            window.setScene(login.createScene(window));
+        });
+
         teacherButton = new Button("Teacher");
 
         teacherButton.setOnAction(e -> {
-            LoginForm login = new LoginForm();
+            teacher.LoginForm login = new teacher.LoginForm();
 
             window.setScene(login.createScene(window));
         });
