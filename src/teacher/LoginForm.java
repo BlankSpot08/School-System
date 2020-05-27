@@ -1,4 +1,4 @@
-package student;
+package teacher;
 
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -9,64 +9,66 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import main.MainMenuForm;
 
 public class LoginForm {
     private Scene mainScene;
     private BorderPane mainBorderPane;
     private VBox mainVBox;
-    private VBox titleVBox;
-    private Label loginLabel;
+    private HBox titleHBox;
+    private Label titleLabel;
     private TextField usernameTextField;
     private PasswordField passwordPasswordField;
+    private HBox buttonsHBox;
     private Button loginButton;
     private Button backButton;
-    private HBox buttonsHBox;
 
     public Scene createScene(Stage window) {
         mainBorderPane = new BorderPane();
 
         mainBorderPane.setCenter(createMainVBox(window));
-        mainBorderPane.setStyle("-fx-background-color: red;");
 
-        mainScene = new Scene(createMainVBox(window), window.getWidth(), window.getHeight());
-        mainScene.getStylesheets().add("css/student/login/StudentLogin.css");
+        mainScene = new Scene(mainBorderPane,
+                window.getWidth(),
+                window.getHeight());
+        mainScene.getStylesheets().add("css/teacher/TeacherLogin.css");
 
         return mainScene;
     }
 
-    private HBox createButtonsHBox(Stage window) {
+    private HBox createButtons(Stage window) {
         buttonsHBox = new HBox();
+
+        loginButton = new Button("Login");
 
         backButton = new Button("Back");
 
         backButton.setOnAction(e -> {
-            MainForm main = new MainForm();
+            MainMenuForm main = new MainMenuForm();
 
             window.setScene(main.createScene(window));
         });
 
-        loginButton = new Button("Login");
-
-        buttonsHBox.getChildren().addAll(backButton, loginButton);
+        buttonsHBox.getChildren().addAll(backButton
+                , loginButton);
 
         return buttonsHBox;
     }
 
-    private VBox createTitle() {
-        titleVBox = new VBox();
-        titleVBox.setId("title");
+    private HBox createTitle() {
+        titleHBox = new HBox();
+        titleHBox.setId("title");
 
-        loginLabel = new Label("Student Login");
+        titleLabel = new Label("Teacher Login");
 
-        titleVBox.getChildren().add(loginLabel);
+        titleHBox.getChildren().add(titleLabel);
 
-        return titleVBox;
+        return titleHBox;
     }
 
-    private VBox createMainVBox(Stage window) {
+    public VBox createMainVBox(Stage window) {
         mainVBox = new VBox();
         mainVBox.setId("main");
-
 
         usernameTextField = new TextField();
         usernameTextField.setPromptText("Username");
@@ -77,7 +79,7 @@ public class LoginForm {
         mainVBox.getChildren().addAll(createTitle(),
                 usernameTextField,
                 passwordPasswordField,
-                createButtonsHBox(window));
+                createButtons(window));
 
         return mainVBox;
     }

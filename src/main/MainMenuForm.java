@@ -8,6 +8,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 import student.MainForm;
+import teacher.LoginForm;
 
 public class MainMenuForm extends Application {
     private Scene mainScene;
@@ -70,9 +71,16 @@ public class MainMenuForm extends Application {
 
         teacherButton = new Button("Teacher");
 
+        teacherButton.setOnAction(e -> {
+            LoginForm login = new LoginForm();
+
+            window.setScene(login.createScene(window));
+        });
+
         studentButton = new Button("Student");
 
         studentButton.setOnAction(e -> {
+            // Student Main Form
             MainForm main = new MainForm();
 
             window.setScene(main.createScene(window));
